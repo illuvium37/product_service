@@ -22,6 +22,11 @@ public class ProductController {
         return ResponseEntity.ok(productService.searchProducts(query));
     }
 
+    @GetMapping()
+    public List<Product> getAllProduct() {
+        return productService.getAll();
+    }
+
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
         return productService.createProduct(product);
